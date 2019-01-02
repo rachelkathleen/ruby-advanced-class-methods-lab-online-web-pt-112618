@@ -21,5 +21,9 @@ class Song
     song.name = song_name
     song
   end
-  
+
+  def self.create_by_name
+    self.new = song.name
+    @@all << self
+  end
 end
