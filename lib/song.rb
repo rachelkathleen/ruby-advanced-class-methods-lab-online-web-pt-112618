@@ -31,4 +31,16 @@ class Song
   def self.find_by_name(song_name)
     self.all.find{|song| song.name == song_name}
   end
+
+  def self.find_or_create_by_name(song_name)
+    if self.all.find{|song| song.name == song_name} != new_from_filename
+      song.name
+    else
+      song = self.create
+      song.name = song_name
+      song
+    end 
+
+  end
+  
 end
